@@ -14,7 +14,7 @@ router.post('/project/add',jwtMiddleWare,multerConfig.single('projectImage'),pro
 //getUserproject
 router.get('/user/all-projects',jwtMiddleWare,projectController.allUserProjects) 
 //getAllproject
-router.get('/project/all',jwtMiddleWare,projectController.getAllProjects) 
+router.get('/project/all',jwtMiddleWare,projectController.getallProjects) 
 //getHomeproject
 router.get('/project/home-projects',projectController.getHomeProjects) 
 
