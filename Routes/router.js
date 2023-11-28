@@ -8,6 +8,7 @@ const multerConfig = require('../Middlewares/multerMiddleware')
 
 // register API
 router.post('/user/register',userController.register)
+// login API
 router.post('/user/login',userController.login)
 // addprojects
 router.post('/project/add',jwtMiddleWare,multerConfig.single('projectImage'),projectController.addProjects)
@@ -19,7 +20,9 @@ router.get('/project/all',jwtMiddleWare,projectController.getallProjects)
 router.get('/project/home-projects',projectController.getHomeProjects) 
 // edit project
 router.put('/project/edit/:id',jwtMiddleWare,multerConfig.single("projectImage"),projectController.editProjectController)
-// login API
-
+// delete project
+router.delete('/project/remove/:id',jwtMiddleWare,projectController.deleteProjectController)
+// edit user
+router.put('/user/edit-user',jwtMiddleWare,multerConfig.single("profileImage"),userController.editUserController)
 // export router
 module.exports=router
